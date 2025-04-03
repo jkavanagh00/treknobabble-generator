@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCARS Treknobabble Generator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Orbitron', sans-serif;
+            background-color: #000;
+        }
+
+        .lcars-frame {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('/lcars_background.png') no-repeat center center;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        :root {
+            --scale: 1;
+        }
+
+        .scaling-wrapper {
+            position: absolute;
+            width: 1440px;
+            height: 1080px;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+        }
+
+        #treknobabble-output,
+        #crew-output,
+        #ship-output {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            left: 485px;
+            font-size: 50px;
+            color: #f90;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: flex-start;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        #treknobabble-output {
+            top: 450px;
+            font-size: 60px;
+            left: 435px;
+        }
+
+        #crew-output,
+        #ship-output {
+            top: 440px;
+        }
+
+        @keyframes pulse {
+            0% {
+                filter: brightness(100%) drop-shadow(0 0 5px rgba(255, 153, 0, 0.7));
+            }
+
+            50% {
+                filter: brightness(140%) drop-shadow(0 0 15px rgba(255, 153, 0, 0.9));
+            }
+
+            100% {
+                filter: brightness(100%) drop-shadow(0 0 5px rgba(255, 153, 0, 0.7));
+            }
+        }
+
+        .lcars-button {
+    position: absolute;
+    width: 402px;
+    height: 116px;
+    font-size: 30px;
+    font-family: 'Orbitron', sans-serif;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 60px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+#treknobabble-button {
+    top: -10px;
+    left: 1179px;
+    background-color: #f90;
+    color: #000;
+}
+
+#crew-button {
+    top: -158px;
+    left: 1179px;
+    background-color: #9b9bff;
+    color: #000;
+}
+
+#ship-button {
+    top: -158px;
+    left: 1600px;
+    background-color: #ff9b9b;
+    color: #000;
+}
+
+.lcars-button:hover {
+    background-color: #ff0;
+    animation-play-state: paused;
+}
+
+        @media (max-aspect-ratio: 4/3) {
+            .lcars-frame {
+                background-size: cover;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="lcars-frame" id="lcarsFrame">
+        <img id="backgroundImage" src="lcars_background.png" style="display: none;">
+        <div class="content-wrapper">
+            <div class="scaling-wrapper">
+                <button id="treknobabble-button" class="lcars-button"><b>GENERATE<br>TREKNOBABBLE</b></button>
+                <button id="crew-button" class="lcars-button"><b>SERVICE<br>RECORDS</b></button>
+                <button id="ship-button" class="lcars-button"><b>STARSHIP<br>REGISTRY</b></button>
+                <div id="treknobabble-output"></div>
+                <div id="crew-output"></div>
+                <div id="ship-output"></div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="treknobabbleGenerator.js"></script>
+</body>
+
+</html>
