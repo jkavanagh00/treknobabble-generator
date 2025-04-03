@@ -96,16 +96,27 @@ export function initializeOutputs() {
         outputs.warp = `Warp ${Math.floor(Math.random() * 8) + 2}`;
         
         outputs.sensor = getRandomElement(data.sensorSynonyms);
+
         outputs.course = `set course ${String(Math.floor(Math.random() * 361)).padStart(3, '0')}-mark-${String(Math.floor(Math.random() * 361)).padStart(3, '0')}`;
+
         outputs.holodeckMishap = getRandomElement(data.holodeckMishaps);
+
         outputs.holodeckInteraction = getRandomElement(data.holodeckInteractions);
+
         outputs.mission = getRandomElement(data.missions);
+
         outputs.yearEnlisted = 2300 + Math.floor(Math.random() * 100);
+
         outputs.launchYear = 2300 + Math.floor(Math.random() * 100);
+
         outputs.notableEvent = getRandomElement(data.notableEvents);
+
         outputs.registry = Math.floor(1000 + Math.random() * 9000);
+
         outputs.rank = getRandomElement(data.ranks);
+        
         outputs.abbreviatedRank = abbreviateRank(outputs.rank);
+
         outputs.department = getRandomElement(Object.keys(data.departments));
         if (outputs.department && Array.isArray(data.departments[outputs.department])) {
             outputs.specialty = getRandomElement(data.departments[outputs.department]);

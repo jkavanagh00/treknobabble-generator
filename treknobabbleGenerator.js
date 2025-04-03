@@ -1,35 +1,3 @@
-/*
-Crew member: 
-outputs.firstName, outputs.lastName, outputs.fullName, outputs.notableEvent, outputs.department, outputs.rank, outputs.rankAbbreviated, outputs.famousCaptain, outputs.notableEvent, outputs.speciality, outputs.species
-
-Malfuntions & Repairs: 
-outputs.malfunction, outputs.malfunctionPresentContinuous, outputs.malfunctionInfinitive, outputs.repairInfinitive, outputs.repairPresentContinuous 
-
-Starships: 
-outputs.component, outputs.course, outputs.deck, outputs.direction, outputs.launchYear, outputs.location, outputs.mission, outputs.registry, outputs.sensor, outputs.shipClass, outputs.shipName, 
-
-Technobabble: 
-outputs.effect, outputs.particle, outputs.technobabbleAdjective, outputs.hazard, outputs.tool, outputs.radiation
-
-Holodeck: 
-outputs.holodeckCharacter, outputs.holodeckInteraction, outputs.holodeckMishap
-
-
-phonetic
-
-
-
-shipClass
-shipName
-speciality
-
-statusQuo
-
-tube
-warp
-yearEnlisted
-*/
-
 import { getVerb, getArticle, capitalize, removeThe, getRandomElement } from './tbgHelperFunctions.js';
 import { initializeOutputs } from './tbgOutputVariables.js';
 
@@ -151,3 +119,127 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('resize', scaleContent);
+
+/*
+Full list of randomized elements
+
+Starship internal components
+${outputs.component}
+
+Course expressed in the "X-mark-Y" system 
+${outputs.course}
+
+Deck, randomly selected between 1 and 42  
+${outputs.deck}
+
+Starfleet department  
+${outputs.department}
+
+Starship directions   
+${outputs.direction}
+
+Technobabble effects 
+${outputs.effect}
+
+Famous Starfleet captain  
+${outputs.famousCaptain}
+
+First name based on species  
+${outputs.firstName}
+
+Full name based on species, inverts Bajoran names and drops surnames if none are provided  
+${outputs.fullName}
+
+Hazard  
+${outputs.hazard}
+
+Holodeck Character  
+${outputs.holodeckCharacter}
+
+Holodeck Interaction  
+${outputs.holodeckInteraction}
+
+Holodeck Mishap  
+${outputs.holodeckMishap}
+
+Last name based on species  
+${outputs.lastName}
+
+Launch Year  
+${outputs.launchYear}
+
+Location  
+${outputs.location}
+
+Malfunction  
+${outputs.malfunction}
+
+Malfunction (Infinitive)  
+${outputs.malfunctionInfinitive}
+
+Malfunction (Present Continuous)  
+${outputs.malfunctionPresentContinuous}
+
+Mission  
+${outputs.mission}
+
+A notable event related to the crew member's history in Starfleet  
+${outputs.notableEvent}
+
+Particle  
+${outputs.particle}
+
+Phonetic  
+${outputs.phonetic}
+
+Radiation  
+${outputs.radiation}
+
+Starfleet rank  
+${outputs.rank}
+
+Starfleet rank, abbreviated  
+${outputs.rankAbbreviated}
+
+Registry  
+${outputs.registry}
+
+Repair (Infinitive)  
+${outputs.repairInfinitive}
+
+Repair (Present Continuous)  
+${outputs.repairPresentContinuous}
+
+Sensor  
+${outputs.sensor}
+
+Ship Class  
+${outputs.shipClass}
+
+Ship Name  
+${outputs.shipName}
+
+Speciality based on department  
+${outputs.speciality}
+
+Starfleet species  
+${outputs.species}
+
+Status Quo  
+${outputs.statusQuo}
+
+Technobabble Adjective  
+${outputs.technobabbleAdjective}
+
+Tool  
+${outputs.tool}
+
+Tube  
+${outputs.tube}
+
+Warp  
+${outputs.warp}
+
+Year Enlisted  
+${outputs.yearEnlisted}
+*/
