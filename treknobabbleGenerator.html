@@ -55,12 +55,13 @@
 
         #treknobabble-output,
         #crew-output,
-        #ship-output {
+        #ship-output,
+        #markov-output {
             position: absolute;
             width: 800px;
             height: 800px;
             left: 485px;
-            font-size: 50px;
+            font-size: 55px;
             color: #f90;
             text-align: left;
             display: flex;
@@ -79,7 +80,15 @@
 
         #crew-output,
         #ship-output {
-            top: 440px;
+            top: 420px;
+        }
+
+        #markov-output {
+            font-size: 80px;
+            top: 650px;
+            left: 435px;
+            text-align: center;
+            vertical-align: middle;
         }
 
         @keyframes pulse {
@@ -128,6 +137,13 @@
     color: #000;
 }
 
+#markov-button {
+    top: -10px;
+    left: 1600px;
+    background-color: #9b9bff;
+    color: #000;
+}
+
 #ship-button {
     top: -158px;
     left: 1600px;
@@ -157,16 +173,18 @@
                 <button id="treknobabble-button" class="lcars-button"><b>GENERATE<br>TREKNOBABBLE</b></button>
                 <button id="crew-button" class="lcars-button"><b>SERVICE<br>RECORDS</b></button>
                 <button id="ship-button" class="lcars-button"><b>STARSHIP<br>REGISTRY</b></button>
+                <button id="markov-button" class="lcars-button"><b>MARKOVITIC<br>RECOMBINATOR</b></button>
                 <div id="treknobabble-output"></div>
                 <div id="crew-output"></div>
                 <div id="ship-output"></div>
+                <div id="markov-output"></div>
 
             </div>
         </div>
     </div>
 
 
-    <script type="module" src="treknobabbleGenerator.js"></script>
+    <script type="module" src="/treknobabbleGenerator.js"></script>
 </body>
 
 </html>

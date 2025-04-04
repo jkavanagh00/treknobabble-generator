@@ -6,13 +6,17 @@
             }
         }
 
-        export function getRandomElement(array, ...exclude) {
-            if (!Array.isArray(array) || array.length === 0) {
-                console.error('Invalid or empty array passed to getRandomElement:', array);
-                return null;
+        export function getRandomElement(input, ...excludeItems) {
+            if (Array.isArray(input)) {
+                const availableItems = input.filter(item => !excludeItems.includes(item));
+                if (availableItems.length === 0) return undefined;
+                return availableItems[Math.floor(Math.random() * availableItems.length)];
+            } else if (typeof input === 'object' && input !== null) {
+                const keys = Object.keys(input).filter(key => !excludeItems.includes(key));
+                if (keys.length === 0) return undefined;
+                return keys[Math.floor(Math.random() * keys.length)];
             }
-            const filteredArray = array.filter(item => !exclude.includes(item));
-            return filteredArray[Math.floor(Math.random() * filteredArray.length)];
+            return undefined;
         }
 
         // Helper function to determine if a word starts with a vowel sound
@@ -36,12 +40,12 @@
 
         // Helper function to get the correct verb form (is/are)
         export function getVerb(subject) {
-            if (subject === undefined) {
-                console.error('Undefined subject passed to getVerb')
-            }
-            return subject.endsWith('s') ? 'are' : 'is';
+            if (subject.endsWith('s')) {
+            return 'are'
+        } else {
+            return 'is';
         }
-
+    }
         // Helper function to pluralize a word (very basic implementation)
         export function pluralize(word) {
             if (word.endsWith('s')) return word;
@@ -52,4 +56,25 @@
         export function removeThe(word) {
             return word.replace(/^the /i, '');
         }
+
+        //Get launch year by ship class
+        export function getLaunchYearByClass(shipClass)  {
+                    if (shipClass === 'Constitution') {
+                        return 2244 + Math.floor(Math.random() * 60);
+                    } else if (shipClass === 'Galaxy') {
+                        return 2352 + Math.floor(Math.random() * 50);
+                    } else if (shipClass === 'Intrepid') {
+                        return 2369 + Math.floor(Math.random() * 60);
+                    } else if (shipClass === 'Defiant') {
+                        return 2373 + Math.floor(Math.random() * 20);
+                    } else if (shipClass ==='Constellation') {
+                        return 2279 + Math.floor(Math.random() * 80);
+                    } else if (shipClass ==='Miranda') {
+                        return 2241 + Math.floor(Math.random() * 50);
+                    } else if (shipClass === 'Nova') {
+                        return 2367 + Math.floor(Math.random() * 30);
+                    };
+                }
+
+        
         
